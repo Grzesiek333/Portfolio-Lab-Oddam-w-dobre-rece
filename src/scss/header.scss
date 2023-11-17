@@ -1,0 +1,36 @@
+.HomeHeader {
+    display: flex;
+    div{
+        width: 50%;
+        height: 100vh;
+        text-align: center;
+        .menu-top ul{ 
+            padding-top: 46px;
+            padding-right: 152px;           
+            display: flex;
+            gap: 30px;
+            justify-content: right;
+            a {
+                text-decoration: none;
+                color: #737373;
+            }
+        }
+        .menu ul{   
+            padding-top: 34px;  
+            padding-right: 142px;              
+            display: flex;
+            gap: 55px;
+            justify-content: right;
+            a {
+                text-decoration: none;
+                color: $main-color;
+            }
+        }
+        h1 {
+            padding-top: 220px;
+            padding-bottom: 25px;
+           
+            text-align: center;
+        }
+    }
+}

@@ -1,7 +1,13 @@
 @import '_reset';
 @import './settings/_colors';
 @import './settings/_fonts';
+@import './header.scss';
 
 body {
     font-family: $font-base;
+}
+h1{
+    font-size: 38px;
+    line-height: 55px;
+    color: $main-color;
 }
