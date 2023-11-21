@@ -7,7 +7,7 @@
         
         
         .menu-top ul{ 
-            padding-top: 46px;
+            padding-top: 40px;
             padding-right: 5%;           
             display: flex;
             gap: 30px;
@@ -15,10 +15,15 @@
             a {
                 text-decoration: none;
                 color: #737373;
+                border: 1px solid transparent; 
+                padding: 5px;
+                &:hover {
+                    border-color: $main-yellow;
+                  }
             }
         }
         .menu ul{   
-            padding-top: 34px;  
+            padding-top: 30px;  
             padding-right: 4%;              
             display: flex;
             gap: 55px;
@@ -26,6 +31,11 @@
             a {
                 text-decoration: none;
                 color: $main-color;
+                border: 1px solid transparent; 
+                padding: 5px;
+                &:hover {
+                    border-color: $main-color;
+                  }
             }
         }
         h1 {
