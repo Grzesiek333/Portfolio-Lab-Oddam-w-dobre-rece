@@ -6,6 +6,10 @@
 body {
     font-family: $font-base;
 }
+
+.container {
+    max-width: 1758px;
+}
 h1{
     font-size: 38px;
     line-height: 55px;

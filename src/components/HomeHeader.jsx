@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function HomeHeader() {
     return (
       <>
-      <section className="HomeHeader">
+      <section className="HomeHeader container">
         <div style={{backgroundImage: "url('src/assets/Home-Hero-Image.jpg')", backgroundPosition: 'top right', backgroundRepeat: 'no-repeat'}}>          
         </div>
         <div>
@@ -25,6 +25,11 @@ export default function HomeHeader() {
           </nav>
           <h1>Zacznij pomagać!<br /> Oddaj niechciane rzeczy w zaufane ręce</h1>
           <img src="src/assets/Decoration.svg"/>
+          <div>
+          <Link className='header_box' to="/logowanie"><div className='header_box'>ODDAJ<br /> RZECZY</div></Link>
+          <Link className='header_box' to="/logowanie"><div className='header_box'>ZORGANIZUJ<br /> ZBIÓRKĘ</div></Link>
+
+          </div>
           
         </div>
       </section>
