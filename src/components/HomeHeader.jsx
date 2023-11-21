@@ -28,9 +28,7 @@ export default function HomeHeader() {
           <div>
           <Link className='header_box' to="/logowanie"><div className='header_box'>ODDAJ<br /> RZECZY</div></Link>
           <Link className='header_box' to="/logowanie"><div className='header_box'>ZORGANIZUJ<br /> ZBIÓRKĘ</div></Link>
-
-          </div>
-          
+          </div>          
         </div>
       </section>
       </>
