@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function SimpleSteps() {
     return (
       <>
@@ -29,9 +31,8 @@ export default function SimpleSteps() {
               <div className='line_SimpleSteps' />
               <text>Zdecyduj komu chcesz pomóc</text>              
             </div>
-          </div>
-            <button>Oddaj rzeczy</button>
-   
+          </div>            
+            <Link to="/logowanie" ><button className="main_button button_SimpleSteps">Oddaj rzeczy</button></Link>   
         </section>
       </>
     );
