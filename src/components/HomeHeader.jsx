@@ -23,12 +23,14 @@ export default function HomeHeader() {
               <li><Link to="">Kontakt</Link></li>
             </ul>
           </nav>
+          <div className='titleAndButtons_header'>
           <h1>Zacznij pomagać!<br /> Oddaj niechciane rzeczy w zaufane ręce</h1>
           <img src="src/assets/Decoration.svg"/>
-          <div>
-          <Link className='header_box' to="/logowanie"><div className='header_box'>ODDAJ<br /> RZECZY</div></Link>
-          <Link className='header_box' to="/logowanie"><div className='header_box'>ZORGANIZUJ<br /> ZBIÓRKĘ</div></Link>
-          </div>          
+          <div className='buttons_header'>
+          <Link to="/logowanie" ><button className='main_button'>ODDAJ<br /> RZECZY</button></Link>
+          <Link to="/logowanie"><button className='main_button'>ZORGANIZUJ<br /> ZBIÓRKĘ</button></Link>
+          </div> 
+          </div>         
         </div>
       </section>
       </>

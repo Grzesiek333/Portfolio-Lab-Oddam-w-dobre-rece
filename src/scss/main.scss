@@ -3,6 +3,7 @@
 @import './settings/_fonts';
 @import './header.scss';
 @import './ThreeColumns.scss';
+@import './SimpleSteps.scss';
 
 body {
     font-family: $font-base;
@@ -15,4 +16,15 @@ h1{
     font-size: 38px;
     line-height: 55px;
     color: $main-color;
+}
+.main_button {            
+    width: 310px;
+    height: 120px;
+    border: 0.75px solid $main-color; 
+    font-size: 36px;   
+    color: $main-color;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;        
 }

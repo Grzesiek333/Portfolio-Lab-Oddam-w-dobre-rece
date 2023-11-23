@@ -1,0 +1,43 @@
+.SimpleSteps {
+    width: 100%;
+    text-align: center;
+    padding-top: 55px;
+    .img_SimpleSteps {
+        margin-top: 32px;
+    }
+    .boxs_Simplesteps {
+        margin-top: 35px;
+        height: 325px;
+        background-color: $background-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;        
+    }
+}
+.box_SimpleSteps {
+    display: flex;
+    flex-direction: column;            
+    align-items: center;
+    gap: 10px;
+       
+    img {                 
+        width: 83px;
+        height: 83px;              
+    }
+    .title_SipmleStps {
+        font-size: 18px;
+        color: $main-color;
+    }
+    text {
+        color: $main-color;
+        font-size: 16px;
+        max-width: 160px;
+    }
+    .line_SimpleSteps {
+        width: 70px;
+        height: 0px;
+        border: 1px solid #707070;
+
+    }
+}

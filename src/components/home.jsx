@@ -1,5 +1,6 @@
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
+import SimpleSteps from "./SimpleSteps";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <>
         <HomeHeader />
         <HomeThreeColumns />
+        <SimpleSteps />
       </>
     );
   }
