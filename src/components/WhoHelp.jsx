@@ -3,6 +3,8 @@ import supabase from '../services/supabase.js';
 
 function Fundaction() {
   const [fundactionData, setFundactionData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; // Liczba elementów na stronie
 
   async function readFundaction() {
     let { data: fundaction, error } = await supabase.from('Fundaction').select('*');
@@ -16,6 +18,12 @@ function Fundaction() {
   useEffect(() => {
     readFundaction();
   }, []); 
+ 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = fundactionData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -23,14 +31,23 @@ function Fundaction() {
         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
       </div>
       <ul>
-        {fundactionData.map((item) => (
+        {currentItems.map((item) => (
           <li key={item.id}>{item.name}</li>
-          
         ))}
-      </ul>
+      </ul>      
+      <div>
+        {Array.from({ length: Math.ceil(fundactionData.length / itemsPerPage) }, (_, index) => (
+          <button key={index + 1} onClick={() => paginate(index + 1)}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
+
+export default Fundaction;
+
 
 function Organizations() {
   return (
