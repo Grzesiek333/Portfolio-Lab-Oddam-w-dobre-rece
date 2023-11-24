@@ -35,36 +35,109 @@ function Fundaction() {
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>      
-      <div>
-        {Array.from({ length: Math.ceil(fundactionData.length / itemsPerPage) }, (_, index) => (
-          <button key={index + 1} onClick={() => paginate(index + 1)}>
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {fundactionData.length > itemsPerPage && (
+        <div>
+          {Array.from({ length: Math.ceil(fundactionData.length / itemsPerPage) }, (_, index) => (
+            <button key={index + 1} onClick={() => paginate(index + 1)}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
-
-export default Fundaction;
-
-
 function Organizations() {
-  return (
-    <div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+    const [OrganizationsData, setOrganizationsData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3; // Liczba elementów na stronie
+  
+    async function readOrganizations() {
+      let { data: fundaction, error } = await supabase.from('Organizations').select('*');
+      if (error) {
+        console.error('Błąd podczas pobierania danych z Supabase:', error.message);
+      } else {
+        setOrganizationsData(fundaction);
+      }
+    }
+  
+    useEffect(() => {
+      readOrganizations();
+    }, []); 
+   
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = OrganizationsData.slice(indexOfFirstItem, indexOfLastItem);
+  
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+    return (
+      <div>
+        <div>
+          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
         </div>
+        <ul>
+          {currentItems.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>      
+        {OrganizationsData.length > itemsPerPage && (
+        <div>
+          {Array.from({ length: Math.ceil(OrganizationsData.length / itemsPerPage) }, (_, index) => (
+            <button key={index + 1} onClick={() => paginate(index + 1)}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
-
-function Fundraisers() {
-  return (
-    <div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  function Fundraisers() {
+    const [FundraisersData, setFundraisersData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3; // Liczba elementów na stronie
+  
+    async function readFundraisers() {
+      let { data: fundaction, error } = await supabase.from('Fundraisers').select('*');
+      if (error) {
+        console.error('Błąd podczas pobierania danych z Supabase:', error.message);
+      } else {
+        setFundraisersData(fundaction);
+      }
+    }
+  
+    useEffect(() => {
+      readFundraisers();
+    }, []); 
+   
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = FundraisersData.slice(indexOfFirstItem, indexOfLastItem);
+  
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+    return (
+      <div>
+        <div>
+          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
         </div>
+        <ul>
+          {currentItems.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>      
+        {FundraisersData.length > itemsPerPage && (
+        <div>
+          {Array.from({ length: Math.ceil(FundraisersData.length / itemsPerPage) }, (_, index) => (
+            <button key={index + 1} onClick={() => paginate(index + 1)}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export function WhoHelp() {
