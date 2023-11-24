@@ -1,0 +1,22 @@
+#WhoHelp {
+    display: flex;
+    justify-content: center;
+    .area_WhoHelp {
+        margin-top: 70px;
+        width: 1344px;
+        height: 862px;
+        display: flex;
+        flex-direction: column;    
+        justify-content: center;
+        align-items: center;
+        img{
+            margin-top: 32px;
+        }
+    }
+}
+.buttons_WhoHelp {
+    margin-top: 70px;
+    display: flex;
+    gap: 10%;
+
+}
