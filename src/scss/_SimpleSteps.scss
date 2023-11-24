@@ -12,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10%;        
+        gap: 8%;        
     }
 }
 .box_SimpleSteps {
@@ -29,7 +29,7 @@
         font-size: 18px;
         color: $main-color;
     }
-    text {
+    .text_simpleSteps {
         color: $main-color;
         font-size: 16px;
         max-width: 160px;
