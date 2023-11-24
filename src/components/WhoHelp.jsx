@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import supabase from '../services/supabase.js';
 
 function Fundaction() {
-  return ( 
+  const [fundactionData, setFundactionData] = useState([]);
+
+  async function readFundaction() {
+    let { data: fundaction, error } = await supabase.from('Fundaction').select('*');
+    if (error) {
+      console.error('Błąd podczas pobierania danych z Supabase:', error.message);
+    } else {
+      setFundactionData(fundaction);
+    }
+  }
+
+  useEffect(() => {
+    readFundaction();
+  }, []); 
+
+  return (
     <div>
-        <div>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
-        </div>
+      <div>
+        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+      </div>
+      <ul>
+        {fundactionData.map((item) => (
+          <li key={item.id}>{item.name}</li>
+          
+        ))}
+      </ul>
     </div>
   );
 }
