@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function SimpleSteps() {
     return (
       <>
-      <section className="SimpleSteps">
+      <section className="SimpleSteps" id="SimpleSteps">
         <h1>Wystarczą 4 proste kroki</h1>
         <img className='img_SimpleSteps' src="src/assets/Decoration.svg"/>
           <div className="boxs_Simplesteps">

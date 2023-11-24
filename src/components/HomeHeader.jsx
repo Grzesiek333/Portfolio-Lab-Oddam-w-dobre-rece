@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HomeHeader() {
+  const scrollToSimpleSteps = () => {
+    const section = document.getElementById('SimpleSteps');
+    if (section) {
+      window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
+    }
+  }
     return (
       <>
       <section className="HomeHeader container">
@@ -17,7 +23,7 @@ export default function HomeHeader() {
           <nav className="menu">
             <ul>
               <li><Link to="">Start</Link></li>
-              <li><Link to="">O co chodzi?</Link></li>
+              <li onClick={scrollToSimpleSteps}>O co chodzi?</li>
               <li><Link to="">O nas</Link></li>
               <li><Link to="">Fundacja i oranizacje</Link></li>
               <li><Link to="">Kontakt</Link></li>
