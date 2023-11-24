@@ -1,9 +1,10 @@
 @import '_reset';
 @import './settings/_colors';
 @import './settings/_fonts';
-@import './header.scss';
-@import './ThreeColumns.scss';
-@import './SimpleSteps.scss';
+@import './_header.scss';
+@import './_ThreeColumns.scss';
+@import './_SimpleSteps.scss';
+@import './_AboutUs.scss';
 
 body {
     font-family: $font-base;

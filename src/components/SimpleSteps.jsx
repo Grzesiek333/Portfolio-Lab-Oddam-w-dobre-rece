@@ -9,27 +9,27 @@ export default function SimpleSteps() {
           <div className="boxs_Simplesteps">
             <div className="box_SimpleSteps">
               <img src="src/assets/Icon-1.svg"/>
-              <text className="title_SipmleStps">Wybierz rzeczy</text>
+              <div className="title_SipmleStps">Wybierz rzeczy</div>
               <div className='line_SimpleSteps' />
-              <text>ubrania, zabawki, sprzęt i inne</text>
+              <div className='text_simpleSteps'>ubrania, zabawki, sprzęt i inne</div>
             </div>
             <div className="box_SimpleSteps">
               <img src="src/assets/Icon-2.svg"/>
-              <text className="title_SipmleStps">Spakuj je</text>
+              <div className="title_SipmleStps">Spakuj je</div>
               <div className='line_SimpleSteps' />
-              <text>skorzystaj z worków na śmieci</text>              
+              <div className='text_simpleSteps'>skorzystaj z worków na śmieci</div>              
             </div>
             <div className="box_SimpleSteps">
               <img src="src/assets/Icon-3.svg"/>
-              <text className="title_SipmleStps">Zdecyduj komu chcesz pomóc</text>
+              <div className="title_SipmleStps">Zdecyduj komu chcesz pomóc</div>
               <div className='line_SimpleSteps' />
-              <text>Zdecyduj komu chcesz pomóc</text>              
+              <div className='text_simpleSteps'>Zdecyduj komu chcesz pomóc</div>              
             </div>
             <div className="box_SimpleSteps">
               <img src="src/assets/Icon-4.svg"/>
-              <text className="title_SipmleStps">Zdecyduj komu chcesz pomóc</text>
+              <div className="title_SipmleStps">Zdecyduj komu chcesz pomóc</div>
               <div className='line_SimpleSteps' />
-              <text>Zdecyduj komu chcesz pomóc</text>              
+              <div className='text_simpleSteps'>Zdecyduj komu chcesz pomóc</div>              
             </div>
           </div>            
             <Link to="/logowanie" ><button className="main_button button_SimpleSteps">Oddaj rzeczy</button></Link>   
