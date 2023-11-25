@@ -18,7 +18,7 @@ function Fundaction() {
   useEffect(() => {
     readFundaction();
   }, []); 
- 
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = fundactionData.slice(indexOfFirstItem, indexOfLastItem);
@@ -27,14 +27,22 @@ function Fundaction() {
 
   return (
     <div>
-      <div>
+      <div className='description_WhoHelp'>
         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
-      </div>
+      </div>      
       <ul>
         {currentItems.map((item) => (
-          <li key={item.id}>{item.name}</li>
+          <div key={item.id} className='row_WhoHelp'>
+            <div className='left_WhoHelp'>
+              <li>{item.name}</li>
+              <li>{item.target}</li>
+            </div>
+            <div className='right_WhoHelp'>
+              <li>{item.items}</li>
+            </div>
+          </div>
         ))}
-      </ul>      
+      </ul>           
       {fundactionData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(fundactionData.length / itemsPerPage) }, (_, index) => (
@@ -73,14 +81,22 @@ function Organizations() {
   
     return (
       <div>
-        <div>
+        <div className='description_WhoHelp'>
           W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
         </div>
         <ul>
-          {currentItems.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>      
+        {currentItems.map((item) => (
+          <div key={item.id} className='row_WhoHelp'>
+            <div className='left_WhoHelp'>
+              <li>{item.name}</li>
+              <li>{item.target}</li>
+            </div>
+            <div className='right_WhoHelp'>
+              <li>{item.items}</li>
+            </div>
+          </div>
+        ))}
+      </ul>    
         {OrganizationsData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(OrganizationsData.length / itemsPerPage) }, (_, index) => (
@@ -119,14 +135,22 @@ function Organizations() {
   
     return (
       <div>
-        <div>
+        <div className='description_WhoHelp'>
           W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
         </div>
         <ul>
-          {currentItems.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>      
+        {currentItems.map((item) => (
+          <div key={item.id} className='row_WhoHelp'>
+            <div className='left_WhoHelp'>
+              <li>{item.name}</li>
+              <li>{item.target}</li>
+            </div>
+            <div className='right_WhoHelp'>
+              <li>{item.items}</li>
+            </div>
+          </div>
+        ))}
+      </ul>     
         {FundraisersData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(FundraisersData.length / itemsPerPage) }, (_, index) => (
