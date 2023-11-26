@@ -4,10 +4,10 @@
     .area_WhoHelp {
         margin-top: 70px;
         width: 1344px;
-        height: 862px;
+        height: 900px;
         display: flex;
         flex-direction: column;    
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         img{
             margin-top: 32px;
@@ -18,5 +18,69 @@
     margin-top: 70px;
     display: flex;
     gap: 10%;
+    margin-bottom: 95px;
+    .button_WhoHelp {
+        color: $main-color;
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        padding-block: 23px;
+        padding-inline: 42px;
+        cursor: pointer;
+    }
+    .active {
+        border: 0.75px solid $main-color;
+    }
+}
+.components_WhoHelp {
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+    width: 100%;     
+    ul {
+        max-width: 1344px;
+        width: 80%;
+        
+    }
+}
+.description_WhoHelp {
+    width: 640px;
+    height: 95px;
+    text-align: center;
+    color: $main-color;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 66px;
+}
+.row_WhoHelp {
+    height: 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $main-color;
+    font-size: 18px;
+}
+.row_WhoHelp:nth-child(2) {
+    border-block: 1px solid $main-color;
+    
+}
+
+.name_WhoHelp {
+    font-size: 26px;
+    margin-bottom: 6px;
+    
+}
+.pagination_WhoHelp {
+    background-color: transparent;
+    border: none;    
+    font-size: 18px;
+    color: $main-color;
+    margin-top: 60px;
+    padding-block: 13px;
+    padding-inline: 15px;
+    cursor: pointer;
+}
+.active_pagination_WhoHelp {
+    border: 0.75px solid $main-color;
 
 }

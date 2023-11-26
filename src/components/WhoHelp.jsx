@@ -26,18 +26,18 @@ function Fundaction() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className='components_WhoHelp'> 
       <div className='description_WhoHelp'>
         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
       </div>      
       <ul>
         {currentItems.map((item) => (
           <div key={item.id} className='row_WhoHelp'>
-            <div className='left_WhoHelp'>
-              <li>{item.name}</li>
+            <div>
+              <li className='name_WhoHelp'>{item.name}</li>
               <li>{item.target}</li>
             </div>
-            <div className='right_WhoHelp'>
+            <div >
               <li>{item.items}</li>
             </div>
           </div>
@@ -46,7 +46,7 @@ function Fundaction() {
       {fundactionData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(fundactionData.length / itemsPerPage) }, (_, index) => (
-            <button key={index + 1} onClick={() => paginate(index + 1)}>
+            <button className={`pagination_WhoHelp ${currentPage === index + 1 ? 'active_pagination_WhoHelp' : ''}`} key={index + 1} onClick={() => paginate(index + 1)}>
               {index + 1}
             </button>
           ))}
@@ -80,18 +80,18 @@ function Organizations() {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
     return (
-      <div>
+      <div className='components_WhoHelp'>
         <div className='description_WhoHelp'>
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
         </div>
         <ul>
         {currentItems.map((item) => (
           <div key={item.id} className='row_WhoHelp'>
-            <div className='left_WhoHelp'>
-              <li>{item.name}</li>
+            <div>
+              <li className='name_WhoHelp'>{item.name}</li>
               <li>{item.target}</li>
             </div>
-            <div className='right_WhoHelp'>
+            <div>
               <li>{item.items}</li>
             </div>
           </div>
@@ -100,9 +100,9 @@ function Organizations() {
         {OrganizationsData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(OrganizationsData.length / itemsPerPage) }, (_, index) => (
-            <button key={index + 1} onClick={() => paginate(index + 1)}>
-              {index + 1}
-            </button>
+           <button className={`pagination_WhoHelp ${currentPage === index + 1 ? 'active_pagination_WhoHelp' : ''}`} key={index + 1} onClick={() => paginate(index + 1)}>
+           {index + 1}
+         </button>
           ))}
         </div>
       )}
@@ -134,18 +134,18 @@ function Organizations() {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
     return (
-      <div>
+      <div className='components_WhoHelp'>
         <div className='description_WhoHelp'>
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
         </div>
         <ul>
         {currentItems.map((item) => (
           <div key={item.id} className='row_WhoHelp'>
-            <div className='left_WhoHelp'>
-              <li>{item.name}</li>
+            <div>
+              <li className='name_WhoHelp'>{item.name}</li>
               <li>{item.target}</li>
             </div>
-            <div className='right_WhoHelp'>
+            <div>
               <li>{item.items}</li>
             </div>
           </div>
@@ -154,9 +154,9 @@ function Organizations() {
         {FundraisersData.length > itemsPerPage && (
         <div>
           {Array.from({ length: Math.ceil(FundraisersData.length / itemsPerPage) }, (_, index) => (
-            <button key={index + 1} onClick={() => paginate(index + 1)}>
-              {index + 1}
-            </button>
+            <button className={`pagination_WhoHelp ${currentPage === index + 1 ? 'active_pagination_WhoHelp' : ''}`} key={index + 1} onClick={() => paginate(index + 1)}>
+            {index + 1}
+          </button>
           ))}
         </div>
       )}
@@ -177,9 +177,9 @@ export function WhoHelp() {
         <h1>Komu pomagamy?</h1>
         <img src="src/assets/Decoration.svg" />
         <div className="buttons_WhoHelp">
-          <button onClick={() => handleButtonClick('fundaction')}>Fundacjom</button>
-          <button onClick={() => handleButtonClick('organizations')}>Organizacjom pozarządowym</button>
-          <button onClick={() => handleButtonClick('fundraisers')}>Lokalnym zbiórkom</button>
+          <button className={`button_WhoHelp ${activeSection === 'fundaction' ? 'active' : ''}`} onClick={() => handleButtonClick('fundaction')}>Fundacjom</button>
+          <button className={`button_WhoHelp ${activeSection === 'organizations' ? 'active' : ''}`} onClick={() => handleButtonClick('organizations')}>Organizacjom pozarządowym</button>
+          <button className={`button_WhoHelp ${activeSection === 'fundraisers' ? 'active' : ''}`} onClick={() => handleButtonClick('fundraisers')}>Lokalnym zbiórkom</button>
         </div>
         {activeSection === 'fundaction' && <Fundaction />}
         {activeSection === 'organizations' && <Organizations />}

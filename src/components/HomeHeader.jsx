@@ -14,6 +14,12 @@ export default function HomeHeader() {
       window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
     }
   }
+  const scrollToWhoHelp = () => {
+    const section = document.getElementById('WhoHelp');
+    if (section) {
+      window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
+    }
+  }
     return (
       <>
       <section className="HomeHeader container">
@@ -31,7 +37,7 @@ export default function HomeHeader() {
               <li><Link to="">Start</Link></li>
               <li onClick={scrollToSimpleSteps}>O co chodzi?</li>
               <li onClick={scrollToAboutUs}>O nas</li>
-              <li><Link to="">Fundacja i oranizacje</Link></li>
+              <li onClick={scrollToWhoHelp}>Fundacja i oranizacje</li>
               <li><Link to="">Kontakt</Link></li>
             </ul>
           </nav>
