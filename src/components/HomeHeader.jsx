@@ -20,6 +20,12 @@ export default function HomeHeader() {
       window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
     }
   }
+  const scrollToContact = () => {
+    const section = document.getElementById('Contact');
+    if (section) {
+      window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
+    }
+  }
     return (
       <>
       <section className="HomeHeader container">
@@ -34,11 +40,11 @@ export default function HomeHeader() {
           </nav>
           <nav className="menu">
             <ul>
-              <li><Link to="">Start</Link></li>
+              <li>Start</li>
               <li onClick={scrollToSimpleSteps}>O co chodzi?</li>
               <li onClick={scrollToAboutUs}>O nas</li>
               <li onClick={scrollToWhoHelp}>Fundacja i oranizacje</li>
-              <li><Link to="">Kontakt</Link></li>
+              <li onClick={scrollToContact}>Kontakt</li>
             </ul>
           </nav>
           <div className='titleAndButtons_header'>

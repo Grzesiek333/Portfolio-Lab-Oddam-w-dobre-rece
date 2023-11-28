@@ -3,6 +3,7 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import AboutUs from "./AboutUs";
 import { WhoHelp } from "./WhoHelp";
+import Contact from "./Contact";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <SimpleSteps />
         <AboutUs />
         <WhoHelp />
+        <Contact />
       </>
     );
   }

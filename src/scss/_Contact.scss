@@ -1,0 +1,78 @@
+.Contact {
+    height: 1026px;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.79), rgba(255, 255, 255, 0.79)), url(../assets/Background-Contact-Form.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    background-repeat: no-repeat;    
+}
+.Form_Contact {
+    margin-right: 50px;
+    width: 530px;
+    height: 700px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        margin-bottom: 32px;
+    }
+
+}
+.firstLine_Form {
+    display: flex;
+    font-size: 16px;
+    color: $main-color;
+    margin-top: 77px;
+    gap: 10px;
+    input {
+        border-color: transparent;
+        border-bottom: 1px solid #707070;
+        background-color: transparent;
+        margin-top: 12px;
+        width: 250px;
+        font-size: 18px;
+    }
+}
+.secondLine_Form{
+    font-size: 16px;
+    color: $main-color;
+    margin-top: 40px;
+    .message {
+        width: 514px;
+        height: 110px;
+        margin-top: 12px;
+        border-color: transparent;
+        border-bottom: 1px solid #707070;
+        background-color: transparent;
+        font-size: 18px;        
+    }
+}
+.thridLine_Form {
+    text-align: right;
+    width: 100%;
+}
+#button_form_contact {
+    color: black;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0.75px solid $main-color;
+    padding-block: 13px;
+    padding-inline: 53px;
+    cursor: pointer;
+    margin-top: 40px;    
+}
+.footer{
+    align-items: end;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+    div{
+        margin-left: 587px;
+        display: flex;
+        gap:20px;
+
+    }
+}
