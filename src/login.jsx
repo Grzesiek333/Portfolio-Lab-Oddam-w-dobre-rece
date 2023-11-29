@@ -28,9 +28,23 @@ export default function Login() {
 
   return (
     <form onSubmit={onSignIn}>
-      <input placeholder="email" />
-      <input placeholder="password" type="password"  />
-      <button>Sign in</button>
+        <div className="form_register">
+              <div className="inputns_form">          
+                <label>Email:</label>
+                <input name="email" onChange={handleEmailChange} />
+                <label>Hasło:</label>
+                <input name="password" type="password" onChange={handlePasswordChange} />
+                <label>Powtórz hasło:</label>                
+                <input name="repeatPassword" type="password" onChange={handleRepeatPasswordChange} />
+                {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
+                {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
+              </div>
+              <div className="buttons_input">
+                <Link to="/logowanie">Zaloguj się</Link>
+                <button type="submit">Załóż konto</button> 
+              </div>            
+          </div>
+
     </form>
   )
 }

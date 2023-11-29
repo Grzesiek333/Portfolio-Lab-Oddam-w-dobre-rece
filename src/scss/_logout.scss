@@ -1,0 +1,21 @@
+.logout{
+    height: 80vh; 
+}
+.logout_panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button_logout {
+    margin-top: 40px;
+    font-size: 18px;
+    color: black;
+    background-color: transparent;
+    text-decoration: none;       
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid $main-color;
+    padding: 13px;
+}

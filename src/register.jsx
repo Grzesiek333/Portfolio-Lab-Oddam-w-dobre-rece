@@ -79,7 +79,7 @@ export default function Register() {
   }
 
   return (    
-    <section id='register'>
+    <section className='register'>
       <Menu />
       <div className="login_panel">
         <h1 className="h1_register">Załóż konto</h1>
