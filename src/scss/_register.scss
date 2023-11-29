@@ -1,7 +1,78 @@
 #register{
+    height: 80vh;   
+}
+.h1_register {
+    margin-bottom: 30px;
+}
+.login_panel {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    .inputns_form {
+        height: 328px;
+        width: 384px;
+        margin-top: 55px;
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } 
+    label{
+        font-size: 16px;
+        color: $main-color;
+        text-align: left;
+        width: 254px;
+    }
+    input {
+        width: 250px;
+        height: 35px;
+        border: transparent;
+        border-bottom: 1px solid $main-color;
+        background-color: transparent;
+        margin-bottom: 31px;
+    }
+}
+.success_register{
+    height: 328px;
+    width: 384px;
+    margin-top: 55px;
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_register {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    button, a {
+        font-size: 18px;
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+        color: #737373;
+        border: 1px solid transparent; 
+        padding: 5px;
+        cursor: pointer;
+            &:hover {
+                border-color: $main-color;
+            }
+            }
+    button {
+        border: 1px solid $main-color;
+        padding: 13px;
+    }
+        
+}
+.buttons_input {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
