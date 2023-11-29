@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function HomeHeader() {
+export function Menu() {
   const scrollToSimpleSteps = () => {
     const section = document.getElementById('SimpleSteps');
     if (section) {
@@ -26,27 +26,34 @@ export default function HomeHeader() {
       window.scrollTo({top: section.offsetTop, behavior: 'smooth' });
     }
   }
+  return (
+    <>
+    <nav className="menu-top">
+    <ul>
+      <Link to="/logowanie">Zaloguj</Link>
+      <Link to="/rejestracja">Załóż konto</Link>
+    </ul>
+  </nav>
+  <nav className="menu">
+    <ul>
+      <Link to="/">Start</Link>
+      <li onClick={scrollToSimpleSteps}>O co chodzi?</li>
+      <li onClick={scrollToAboutUs}>O nas</li>
+      <li onClick={scrollToWhoHelp}>Fundacja i oranizacje</li>
+      <li onClick={scrollToContact}>Kontakt</li>
+    </ul>
+  </nav>
+  </>
+  )
+}
+export default function HomeHeader() {
     return (
       <>
       <section className="HomeHeader container">
         <div style={{backgroundImage: "url('src/assets/Home-Hero-Image.jpg')", backgroundPosition: 'top right', backgroundRepeat: 'no-repeat'}}>          
         </div>
         <div>
-          <nav className="menu-top">
-            <ul>
-              <li><Link to="/logowanie">Zaloguj</Link></li>
-              <li><Link to="/rejestracja">Załóż konto</Link></li>
-            </ul>
-          </nav>
-          <nav className="menu">
-            <ul>
-              <li>Start</li>
-              <li onClick={scrollToSimpleSteps}>O co chodzi?</li>
-              <li onClick={scrollToAboutUs}>O nas</li>
-              <li onClick={scrollToWhoHelp}>Fundacja i oranizacje</li>
-              <li onClick={scrollToContact}>Kontakt</li>
-            </ul>
-          </nav>
+        <Menu />
           <div className='titleAndButtons_header'>
           <h1>Zacznij pomagać!<br /> Oddaj niechciane rzeczy w zaufane ręce</h1>
           <img src="src/assets/Decoration.svg"/>

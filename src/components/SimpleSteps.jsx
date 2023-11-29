@@ -23,13 +23,13 @@ export default function SimpleSteps() {
               <img src="src/assets/Icon-3.svg"/>
               <div className="title_SipmleStps">Zdecyduj komu chcesz pomóc</div>
               <div className='line_SimpleSteps' />
-              <div className='text_simpleSteps'>Zdecyduj komu chcesz pomóc</div>              
+              <div className='text_simpleSteps'>wybierz zaufane miejsce</div>              
             </div>
             <div className="box_SimpleSteps">
               <img src="src/assets/Icon-4.svg"/>
-              <div className="title_SipmleStps">Zdecyduj komu chcesz pomóc</div>
+              <div className="title_SipmleStps">Zamów kuriera</div>
               <div className='line_SimpleSteps' />
-              <div className='text_simpleSteps'>Zdecyduj komu chcesz pomóc</div>              
+              <div className='text_simpleSteps'>kurier przyjedzie w dogodnym terminie</div>              
             </div>
           </div>            
             <Link to="/logowanie" ><button className="main_button button_SimpleSteps">Oddaj rzeczy</button></Link>   
