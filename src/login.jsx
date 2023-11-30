@@ -1,9 +1,14 @@
 import supabase from "./services/supabase";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Menu } from "./components/HomeHeader";
 
 export default function Login() {
-
-  const navigation = useNavigate();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorText, setErrorText] = useState(''); // Dodano stan do przechowywania treści błędu
 
   async function onSignIn(e) {
     e.preventDefault();
@@ -19,32 +24,37 @@ export default function Login() {
       console.log('user logged successfully');
       console.log(data);
 
-      navigation('/');
+      navigate('/');
       return;
     }
 
+    setErrorText('Nieprawidłowy login lub hasło'); // Ustawienie treści błędu
     console.error('something went wrong', error);
   }
 
   return (
+  <section className='register'>
+    <Menu/>
+    <div className="login_panel">
+        <h1 className="h1_register">Zaloguj się</h1>
+        <img src="src/assets/Decoration.svg" alt="Dekoracja"/>
+    
     <form onSubmit={onSignIn}>
-        <div className="form_register">
-              <div className="inputns_form">          
-                <label>Email:</label>
-                <input name="email" onChange={handleEmailChange} />
-                <label>Hasło:</label>
-                <input name="password" type="password" onChange={handlePasswordChange} />
-                <label>Powtórz hasło:</label>                
-                <input name="repeatPassword" type="password" onChange={handleRepeatPasswordChange} />
-                {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
-                {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
-              </div>
-              <div className="buttons_input">
-                <Link to="/logowanie">Zaloguj się</Link>
-                <button type="submit">Załóż konto</button> 
-              </div>            
-          </div>
-
+      <div className="form_register">
+        <div className="inputns_form">          
+          <label>Email:</label>
+          <input name="email" />
+          <label>Hasło:</label>
+          <input name="password" type="password" />
+          {errorText && <span style={{ color: 'red' }}>{errorText}</span>}
+        </div>        
+        <div className="buttons_input">
+          <Link to="/rejestracja">Załóż konto</Link>
+          <button type="submit">Zaloguj się</button> 
+        </div>            
+      </div>      
     </form>
-  )
+    </div>
+  </section>
+  );
 }
