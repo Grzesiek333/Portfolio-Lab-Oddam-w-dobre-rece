@@ -8,8 +8,20 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorText, setErrorText] = useState(''); // Dodano stan do przechowywania treści błędu
-
+  const [errorText, setErrorText] = useState('');
+  
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
+    if (!validateEmail(email)) {
+      setErrorText("Nieprawidłowy adres e-mail");
+    } else {
+      setErrorText("");
+    }
+  };
   async function onSignIn(e) {
     e.preventDefault();
 
@@ -19,6 +31,11 @@ export default function Login() {
       email: formElements[0].value,
       password: formElements[1].value,
     });
+    if (formElements[1].value.length < 6) {
+      setErrorText("Hasło musi mieć co najmniej 6 znaków");
+      return;
+    }
+
 
     if (!error) {
       console.log('user logged successfully');
@@ -28,7 +45,7 @@ export default function Login() {
       return;
     }
 
-    setErrorText('Nieprawidłowy login lub hasło'); // Ustawienie treści błędu
+    setErrorText('Nieprawidłowy login lub hasło');
     console.error('something went wrong', error);
   }
 
@@ -43,7 +60,7 @@ export default function Login() {
       <div className="form_register">
         <div className="inputns_form">          
           <label>Email:</label>
-          <input name="email" />
+          <input name="email" onChange={handleEmailChange} />
           <label>Hasło:</label>
           <input name="password" type="password" />
           {errorText && <span style={{ color: 'red' }}>{errorText}</span>}
